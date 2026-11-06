@@ -1,0 +1,156 @@
+import type { Workspace } from "./model";
+
+export const STORAGE_KEY = "okrt.workspace.v1";
+
+export function seedWorkspace(): Workspace {
+  return {
+    activeCycleId: "q4-2026",
+    cycles: [
+      {
+        id: "q3-2026",
+        name: "Q3 2026",
+        start: "2026-07-01",
+        end: "2026-09-30",
+      },
+      {
+        id: "q4-2026",
+        name: "Q4 2026",
+        start: "2026-10-01",
+        end: "2026-12-31",
+      },
+      {
+        id: "q1-2027",
+        name: "Q1 2027",
+        start: "2027-01-01",
+        end: "2027-03-31",
+      },
+    ],
+    objectives: [
+      {
+        id: "obj-habit",
+        cycleId: "q4-2026",
+        title: "Make the Monday review a habit",
+        description: "The quarter only counts if the review happens when nobody is chasing it.",
+        owner: "Anitha",
+      },
+      {
+        id: "obj-cycle",
+        cycleId: "q4-2026",
+        title: "Shorten the path from idea to production",
+        description: "Ship smaller, and stop treating cycle time as a feeling.",
+        owner: "Priya",
+      },
+      {
+        id: "obj-partners",
+        cycleId: "q4-2026",
+        title: "Sign the first ten design partners",
+        description: "Ten teams who would miss the product if it disappeared on a Friday.",
+        owner: "Jules",
+      },
+      {
+        id: "obj-pilot",
+        cycleId: "q3-2026",
+        title: "Stand up the OKR practice",
+        description: "A pilot quarter: three teams, one shared score, no slide theater.",
+        owner: "Anitha",
+      },
+    ],
+    keyResults: [
+      {
+        id: "kr-teams",
+        objectiveId: "obj-habit",
+        title: "Teams running the Monday review",
+        unit: "teams",
+        startValue: 1,
+        targetValue: 8,
+        currentValue: 5,
+      },
+      {
+        id: "kr-ontime",
+        objectiveId: "obj-habit",
+        title: "Check-ins filed before the review",
+        unit: "%",
+        startValue: 20,
+        targetValue: 90,
+        currentValue: 68,
+      },
+      {
+        id: "kr-cycle",
+        objectiveId: "obj-cycle",
+        title: "Median cycle time",
+        unit: "days",
+        startValue: 11,
+        targetValue: 4,
+        currentValue: 9,
+      },
+      {
+        id: "kr-incidents",
+        objectiveId: "obj-cycle",
+        title: "Sev-1 incidents",
+        unit: "incidents",
+        startValue: 14,
+        targetValue: 4,
+        currentValue: 11,
+      },
+      {
+        id: "kr-signed",
+        objectiveId: "obj-partners",
+        title: "Signed design partners",
+        unit: "partners",
+        startValue: 0,
+        targetValue: 10,
+        currentValue: 1,
+      },
+      {
+        id: "kr-pipeline",
+        objectiveId: "obj-partners",
+        title: "Qualified conversations",
+        unit: "conversations",
+        startValue: 3,
+        targetValue: 25,
+        currentValue: 6,
+      },
+      {
+        id: "kr-pilot-teams",
+        objectiveId: "obj-pilot",
+        title: "Pilot teams scoring weekly",
+        unit: "teams",
+        startValue: 0,
+        targetValue: 3,
+        currentValue: 3,
+      },
+      {
+        id: "kr-rules",
+        objectiveId: "obj-pilot",
+        title: "Shared scoring rules adopted",
+        unit: "ruleset",
+        startValue: 0,
+        targetValue: 1,
+        currentValue: 1,
+      },
+    ],
+    checkIns: [
+      {
+        id: "ci-teams-1",
+        keyResultId: "kr-teams",
+        value: 4,
+        note: "Design and support started the Monday review.",
+        at: "2026-10-20T09:30:00.000Z",
+      },
+      {
+        id: "ci-teams-2",
+        keyResultId: "kr-teams",
+        value: 5,
+        note: "Finance joined. The notes template is sticking.",
+        at: "2026-11-03T09:15:00.000Z",
+      },
+      {
+        id: "ci-signed-1",
+        keyResultId: "kr-signed",
+        value: 1,
+        note: "Northwind signed. Nine conversations still warm.",
+        at: "2026-11-04T13:40:00.000Z",
+      },
+    ],
+  };
+}
